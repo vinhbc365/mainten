@@ -1,90 +1,76 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="vi">
 <head>
-    <meta charset="UTF-8">
-    <title>Redirect</title>
-    <link rel="icon" type="image/png" href="../favicon.png" />
-    <style>
-        body {
-            font-family: 'Times New Roman', Times, serif; /* Đặt font chữ là Times New Roman */
-            background-color: #f0f0f0; /* Màu nền nhẹ */
-            text-align: center; /* Căn giữa nội dung */
-            padding: 20px; /* Khoảng cách bên trong */
-			
-        }
-        
-        a {
-            text-decoration: none; /* Bỏ gạch chân */
-            font-weight: bold; /* Chữ đậm */
-        }
-        .link {
-            color: #00BFFF; /* Màu nâu sáng cho liên kết */
-			font-family: 'Times New Roman', Times, serif; /* Đặt font chữ là Times New Roman */
-			margin-bottom: 20px; /* Khoảng cách dưới tiêu đề */
-			font-size: 1.0em; /* Kích thước chữ lớn hơn */
-			
-        }
-		 .title01 {
-             color: #FFFFFF; /* Màu nâu sáng cho liên kết */
-			font-family: 'Times New Roman', Times, serif; /* Đặt font chữ là Times New Roman */
-			margin-bottom: 20px; /* Khoảng cách dưới tiêu đề */
-			font-size: 1.5em; /* Kích thước chữ lớn hơn */
-        }
-		 .title02 {
-             color: #FFFFFF; /* Màu nâu sáng cho liên kết */
-			font-family: 'Times New Roman', Times, serif; /* Đặt font chữ là Times New Roman */
-			margin-bottom: 20px; /* Khoảng cách dưới tiêu đề */
-			font-size: 1.0em; /* Kích thước chữ lớn hơn */
-        }
-        .warning {
-             color: #FFFFFF; /* Màu nâu sáng cho liên kết */
-			font-family: 'Times New Roman', Times, serif; /* Đặt font chữ là Times New Roman */
-			margin-bottom: 20px; /* Khoảng cách dưới tiêu đề */
-			font-size: 1.0em; /* Kích thước chữ lớn hơn */
-        }
-    </style>
-    <script type="text/javascript" src="js/ss_load.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#071412">
+  <meta name="description" content="Thông báo hệ thống đang bảo trì.">
+  <title>Hệ thống đang bảo trì</title>
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="stylesheet" href="css/maintenance.css">
 </head>
 <body>
-    <div class="ss-countdown-container" >
-	<center><a class="title01"> HỆ THỐNG ĐANG BẢO TRÌ .</a></center>
-	
-        <div class="ss-clock-container">
-		  <center><a class="warning">Vui lòng quay lại sau khoảng thời gian bên dưới:</a></center>
-		  <div></div>
-            <div class="ss-clock-days-container">
-                <div class="ss-bg-layer">
-                    <canvas class="ss-days-canvas" width="216" height="216"></canvas>
-                    <div class="ss-text"><p class="ss-value">0</p><p class="ss-days-text">Ngày</p></div>
-                </div>
-            </div>
-            
-            <div class="ss-clock-hours-container">
-                <div class="ss-bg-layer">
-                    <canvas class="ss-hours-canvas" width="216" height="216"></canvas>
-                    <div class="ss-text"><p class="ss-value">0</p><p class="ss-hours-text">Giờ</p></div>
-                </div>
-            </div>
-            
-            <div class="ss-clock-minutes-container">
-                <div class="ss-bg-layer">
-                    <canvas class="ss-minutes-canvas" width="216" height="216"></canvas>
-                    <div class="ss-text"><p class="ss-value">0</p><p class="ss-minutes-text">Phút</p></div>
-                </div>
-            </div>
-            
-            <div class="ss-clock-seconds-container">
-                <div class="ss-bg-layer">
-                    <canvas class="ss-seconds-canvas" width="216" height="216"></canvas>
-                    <div class="ss-text"><p class="ss-value">0</p><p class="ss-seconds-text">Giây</p></div>
-                </div>
-            </div>
+  <div class="ambient ambient-1" aria-hidden="true"></div>
+  <div class="ambient ambient-2" aria-hidden="true"></div>
+  <div class="noise" aria-hidden="true"></div>
+
+  <main class="page-shell">
+    <section class="maintenance-card" aria-labelledby="page-title">
+      <div class="topbar">
+        <div class="brand" aria-label="Website maintenance">
+          <span class="brand-mark"><span></span><span></span><span></span></span>
+          <span>MAINTENANCE</span>
         </div>
-        <div class="ss-subscribe-container">
-            <form class="ss-subscribe-form">
-                <!-- Form nội dung có thể được thêm ở đây -->
-            </form>
+        <div class="status-pill"><span class="status-dot"></span> Hệ thống đang bảo trì</div>
+      </div>
+
+      <div class="hero">
+        <div class="icon-wrap" aria-hidden="true">
+          <div class="orbit orbit-a"></div>
+          <div class="orbit orbit-b"></div>
+          <div class="gear">⚙</div>
         </div>
-    </div>
+
+        <p class="eyebrow">CHÚNG TÔI SẼ QUAY LẠI SỚM</p>
+        <h1 id="page-title">Hệ thống đang được<br><em>bảo trì & nâng cấp</em></h1>
+        <p class="lead">Chúng tôi đang thực hiện một số thay đổi để hệ thống hoạt động ổn định, nhanh và an toàn hơn. Cảm ơn bạn đã kiên nhẫn.</p>
+
+        <div class="countdown" id="countdown" aria-label="Thời gian còn lại">
+          <div class="time-box"><strong id="days">00</strong><span>Ngày</span></div>
+          <div class="separator">:</div>
+          <div class="time-box"><strong id="hours">00</strong><span>Giờ</span></div>
+          <div class="separator">:</div>
+          <div class="time-box"><strong id="minutes">00</strong><span>Phút</span></div>
+          <div class="separator">:</div>
+          <div class="time-box"><strong id="seconds">00</strong><span>Giây</span></div>
+        </div>
+
+        <div class="target-line">
+          <span class="target-icon">◷</span>
+          Dự kiến hoàn tất: <b id="targetText">đang cập nhật</b>
+        </div>
+
+        <div class="actions">
+          <button class="btn btn-primary" id="refreshBtn" type="button">
+            <span class="refresh-icon">↻</span> Thử tải lại
+          </button>
+          <button class="btn btn-ghost" id="statusBtn" type="button">Xem trạng thái</button>
+        </div>
+
+        <div class="status-panel" id="statusPanel" hidden>
+          <div class="status-row"><span><i class="ok"></i> Website</span><b>Đang bảo trì</b></div>
+          <div class="status-row"><span><i class="ok"></i> Máy chủ</span><b>Ổn định</b></div>
+          <div class="status-row"><span><i class="ok"></i> Dữ liệu</span><b>An toàn</b></div>
+        </div>
+      </div>
+
+      <footer>
+        <span>© <span id="year"></span> — Hệ thống đang được nâng cấp</span>
+        <span class="live-time" id="liveTime"></span>
+      </footer>
+    </section>
+  </main>
+
+  <script src="js/maintenance.js"></script>
 </body>
 </html>
